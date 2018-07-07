@@ -290,8 +290,8 @@ class ExpressController extends HomeBaseController
     public function getNewAccessToken()
     {
         $params = array(
-            'appid' => 'wx87c03bc2789e3178',
-            'secret' => '498dbbdb7a158f09d8e8eff7363bb56f',
+            'appid' => config('wx_appid'),
+            'secret' => config('wx_secret'),
             'grant_type' => 'client_credential'
         );
         $url = "https://api.weixin.qq.com/cgi-bin/token?" . http_build_query($params);
