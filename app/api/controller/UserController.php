@@ -16,8 +16,8 @@ class UserController extends HomeBaseController
     public function openid($code)
     {
         $params = array(
-            'appid' => 'wx87c03bc2789e3178',
-            'secret'=> '498dbbdb7a158f09d8e8eff7363bb56f',
+            'appid' => config('wx_appid'),
+            'secret' => config('wx_secret'),
             'js_code' => $code,
             'grant_type' => 'authorization_code'
         );
