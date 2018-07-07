@@ -263,7 +263,6 @@ class ExpressController extends HomeBaseController
             )
         );
         $url = "https://api.weixin.qq.com/cgi-bin/message/wxopen/template/send?access_token=$accessToken";
-        $this->log("express sender: " . $express['openid']);
         return cmf_curl_post($url, $params);
     }
 
@@ -298,10 +297,4 @@ class ExpressController extends HomeBaseController
         $data = json_decode(cmf_curl_get($url), true);
         return $data;
     }
-
-    public function log($info)
-    {
-        Db::name('debug')->insert(array('info' => $info));
-    }
-
 }
